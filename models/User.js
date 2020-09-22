@@ -13,7 +13,7 @@ module.exports = db.sequelize.define(
         name: {
             type: Sequelize.STRING
         },
-        birthdate: {
+        birth_date: {
             type: Sequelize.DATE
         },
         email: {

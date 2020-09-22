@@ -10,6 +10,7 @@ users.use(cors())
 process.env.SECRET_KEY = 'secret'
 
 // REGISTRO DO USUÁRIO
+// ./users/register   METODO: POST
 // Para realizar o cadastro do usuário através do Postman basta adicionar o endpoint e repassar as informações que são necessárias no body
 // No caso, nome, data de nascimento, email, senha, após o envio o created usará o horário atual para armazenar o horário de registro.
 users.post('/register', (req, res) => {
@@ -47,6 +48,7 @@ users.post('/register', (req, res) => {
 })
 
 //LOGIN
+// ./users/login   METODO: POST
 //Primeiro procura o email no qual está tentando logar e com isso analisa se o solicitante é usuário ou não.
 //Caso seja ele irá comparar a senha repassada pelo parâmetro req com a senha descriptografada do banco de dados, caso esteja correto, será retornado o web token de conexão.
 users.post('/login', (req, res) => {
@@ -74,6 +76,7 @@ users.post('/login', (req, res) => {
 
 
 // EDIÇÃO DE USUÁRIO
+// ./users/edit   METODO: PUT
 // Usuário edita as informações de conta, sendo possível apenas mudar nome, data de nascimento e email, com isso o horário da última edição é armazenado.
 // Primeiro ele procura o usuário com o email solicitado e após isso muda os dados que foram entregues como parâmetro em userData.
 users.put('/edit', (req, res) => {
@@ -110,6 +113,7 @@ users.put('/edit', (req, res) => {
 })
 
 // DELEÇÃO DE USUÁRIO POR ID
+// ./users/delete   METODO: POST
 // Procura o usuário com o id recebido como parâmetro e então exclui o usuário correspondente no banco de dados.
 users.post('/delete', (req, res) => {
     User.findOne({
