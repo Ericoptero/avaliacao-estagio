@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize")
 const db = require("../database/db")
 
+// Sequelize é um ORM para facilitar o trabalho utilizando banco de dados SQL, aqui fazemos o mapeamento da tabela de usuários do banco de dados.
 module.exports = db.sequelize.define(
     'user',
     {

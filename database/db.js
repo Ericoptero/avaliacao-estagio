@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize")
 const db = {}
-const sequelize = new Sequelize("nodejs_login1", "root", "", {
+// Conexão com o banco de dados, em dialect é possivel selecionar com qual banco de dados SQL você quer trabalhar.
+const sequelize = new Sequelize("estagio_db", "root", "", {
     host: 'localhost',
     dialect: 'mysql',
     operatorsAliases: false,
